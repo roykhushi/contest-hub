@@ -8,9 +8,9 @@ export function addToCalendar(contest: Contest) {
     return date.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"
   }
 
-  const title = encodeURIComponent(`[${contest.resource.name.toUpperCase()}] ${contest.name}`)
+  const title = encodeURIComponent(`[${contest.resource}] ${contest.event}`)
   const details = encodeURIComponent(
-    `Contest: ${contest.name}\nPlatform: ${contest.resource.name}\nRegistration: ${contest.registration_url || contest.href}`,
+    `Contest: ${contest.event}\nPlatform: ${contest.resource}\nRegistration: ${contest.href}`,
   )
   const location = encodeURIComponent(contest.href)
 
@@ -39,8 +39,8 @@ UID:contest-${contest.id}@contesthub.com
 DTSTAMP:${formatDateForICS(new Date())}
 DTSTART:${formatDateForICS(startDate)}
 DTEND:${formatDateForICS(endDate)}
-SUMMARY:[${contest.resource.name.toUpperCase()}] ${contest.name}
-DESCRIPTION:Contest: ${contest.name}\\nPlatform: ${contest.resource.name}\\nRegistration: ${contest.registration_url || contest.href}
+SUMMARY:[${contest.resource}] ${contest.event}
+DESCRIPTION:Contest: ${contest.event}\\nPlatform: ${contest.resource.name}\\nRegistration: ${contest.registration_url || contest.href}
 URL:${contest.href}
 LOCATION:${contest.href}
 BEGIN:VALARM

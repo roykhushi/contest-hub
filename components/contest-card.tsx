@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Clock, ExternalLink, Plus } from "lucide-react"
+import { Calendar, Clock, ExternalLink } from "lucide-react"
 import type { Contest } from "@/types/contest.types"
 import { formatDate, formatDuration, getTimeUntilStart, isContestRunning } from "@/utils/date-helpers"
 import { addToCalendar } from "@/utils/calendar-helpers"

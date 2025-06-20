@@ -3,10 +3,7 @@ export interface Contest {
   event: string
   start: string 
   end: string 
-  resource: {
-    name: string
-    icon_url: string
-  }
+  resource: string
   href: string
   duration: number 
   registration_url?: string,

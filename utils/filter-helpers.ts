@@ -1,20 +1,32 @@
 import type { Contest, ContestFilters } from "@/types/contest.types"
-import { isInDateRange, isContestRunning } from "./date-helpers"
+import { isInDateRange, isContestRunning } from "@/utils/date-helpers"
 
 export function filterContests(contests: Contest[], filters: ContestFilters): Contest[] {
   return contests.filter((contest) => {
+    // if (new Date(contest.end) < new Date()) {
+    //   return false;
+    // }
+
     // Search filter
-    if (filters.search && !contest.name.toLowerCase().includes(filters.search.toLowerCase())) {
+    if (
+      filters.search &&
+      !contest.event.toLowerCase().includes(filters.search.toLowerCase())
+    ) {
       return false
     }
 
-    // Platform filter
-    if (filters.platforms.length > 0 && !filters.platforms.includes(contest.resource.name)) {
+    if (
+      filters.platforms.length > 0 &&
+      !filters.platforms.includes(contest.resource)
+    ) {
       return false
     }
 
     // Date range filter
-    if (filters.dateRange !== "all" && !isInDateRange(contest.start, filters.dateRange)) {
+    if (
+      filters.dateRange !== "all" &&
+      !isInDateRange(contest.start, filters.dateRange)
+    ) {
       return false
     }
 

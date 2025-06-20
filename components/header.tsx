@@ -26,7 +26,7 @@ export function Header({ onToggleFilters }: HeaderProps) {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           {/* <Calendar className="h-8 w-8 text-primary" /> */}
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
             ContestHub
           </h1>
         </div>
