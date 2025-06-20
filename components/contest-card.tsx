@@ -14,7 +14,7 @@ interface ContestCardProps {
 }
 
 export function ContestCard({ contest }: ContestCardProps) {
-  const platformInfo = getPlatformInfo(contest.resource.name)
+  const platformInfo = getPlatformInfo(contest.resource)
   const timeUntil = getTimeUntilStart(contest.start)
   const isRunning = isContestRunning(contest.start, contest.end)
 
