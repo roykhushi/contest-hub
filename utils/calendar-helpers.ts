@@ -40,7 +40,7 @@ DTSTAMP:${formatDateForICS(new Date())}
 DTSTART:${formatDateForICS(startDate)}
 DTEND:${formatDateForICS(endDate)}
 SUMMARY:[${contest.resource}] ${contest.event}
-DESCRIPTION:Contest: ${contest.event}\\nPlatform: ${contest.resource.name}\\nRegistration: ${contest.registration_url || contest.href}
+DESCRIPTION:Contest: ${contest.event}\\nPlatform: ${contest.resource}\\nRegistration: ${contest.registration_url || contest.href}
 URL:${contest.href}
 LOCATION:${contest.href}
 BEGIN:VALARM
